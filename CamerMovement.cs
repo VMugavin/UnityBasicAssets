@@ -27,7 +27,7 @@ public class CamerMovement : MonoBehaviour
     {
         moveVector.x = player.transform.position.x - transform.position.x;
         moveVector.y = player.transform.position.y - transform.position.y;
-        speed = Math.Abs((moveVector.x + moveVector.y) / 2);
+        speed = (Math.Abs(moveVector.x) + Math.Abs(moveVector.y)) / 2;
         Cam.MovePosition(Cam.position + moveVector * speed * 5 * Time.deltaTime);
         CamSet.orthographicSize = 3 + speed / 2;
     }
